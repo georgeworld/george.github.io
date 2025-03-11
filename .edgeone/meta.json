@@ -1,0 +1,21 @@
+{
+  "conf": {},
+  "routes": [
+    {
+      "routePath": "/helloworld",
+      "mountPath": "/",
+      "method": "",
+      "module": [
+        "helloworld/index.js:onRequest"
+      ]
+    },
+    {
+      "routePath": "/kvdb",
+      "mountPath": "/",
+      "method": "",
+      "module": [
+        "kvdb/index.js:onRequest"
+      ]
+    }
+  ]
+}
