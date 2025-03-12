@@ -1,23 +1,55 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import {
+  Check,
+  Delete,
+  Edit,
+  Message,
+  Search,
+  Star,
+} from '@element-plus/icons-vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div style="width: 1298px;">
+    <el-container>
+      <el-header height="160px" style="border-bottom: dotted lightgrey 2px;">
+        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="128" height="128" />
+        <HelloWorld msg="老乔编程学习网" />
+      </el-header>
+      <el-container>
+        <el-aside width="200px" style="border-right: dotted lightgrey 2px;">
+          <div style="margin-top: 12px;">
+            <el-button :icon="Search" circle />
+            <el-button type="primary" :icon="Edit" circle />
+            <el-button type="success" :icon="Check" circle />
+            <el-button type="info" :icon="Message" circle />
+            <el-button type="warning" :icon="Star" circle />
+            <el-button type="danger" :icon="Delete" circle />
+          </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="老乔编程学习网" />
+          <nav>
+            <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/about">About</RouterLink>
+          </nav>
+        </el-aside>
+        <el-container>
+          <el-main>
+            
+            <div class="wrapper">
+              这里是导航栏
+            </div>
+            <RouterView />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+          </el-main>
+          <el-footer>Footer</el-footer>
+        </el-container>
+      </el-container>
+    </el-container>
+  </div>
 
-  <RouterView />
 </template>
 
 <style scoped>
